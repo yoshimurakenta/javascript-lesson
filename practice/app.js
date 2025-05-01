@@ -80,25 +80,25 @@ user.sayHello();
 
 let calc = {};
 
-calc.add = function(x,y) {
+calc.add = function(x, y) {
   console.log(x + y);
 }
 
 calc.add(3,4);
 
-calc.subtract = function(x,y) {
+calc.subtract = function(x, y) {
   console.log(x - y);
 }
 
 calc.subtract(13,3);
 
-calc.multiply = function(x,y) {
+calc.multiply = function(x, y) {
   console.log(x * y);
 }
 
 calc.multiply(7,7);
 
-calc.divide = function(x,y) {
+calc.divide = function(x, y) {
   console.log(x / y);
 }
 
@@ -106,14 +106,14 @@ calc.divide(15,3);
 
 //Q9返り値
 
-function remainder(x,y){
+function remainder(x, y){
   let mod = x % y;
   return mod;
 }
 
 let x = 5;
 let y = 3;
-console.log(x + 'を' + y + 'で割った余りは' + remainder(x,y) + 'です。');
+console.log(x + 'を' + y + 'で割った余りは' + remainder(x, y) + 'です。');
 
 //Q10スコープ
 /*
