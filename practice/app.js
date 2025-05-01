@@ -44,9 +44,10 @@ let playerList = [
 console.log(playerList[1].favorites[1]);
 
 //Q5四則演算
-let ageSum = [playerList[0].age + playerList[1].age + playerList[2].age]
+let ageSum = playerList[0].age + playerList[1].age + playerList[2].age
+let averageAge = (ageSum / playerList.length);
 
-console.log(ageSum / playerList.length);
+console.log(averageAge);
 
 //Q6関数
 function sayHello(){
