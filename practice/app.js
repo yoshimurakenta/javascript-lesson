@@ -1,13 +1,13 @@
 //Q1変数
 let nickname = 'ごっしー';
-let age = '28歳'
-let selfIntroduce = '私のニックネームは' + nickname + 'です。年齢は' + age + 'です。'
+let age = '28歳';
+let selfIntroduce = '私のニックネームは' + nickname + 'です。年齢は' + age + 'です。';
 
 console.log(selfIntroduce);
 
 
 //Q2配列
-let languages = ['JavaScript', 'PHP', 'Ruby', 'Python', 'Go']
+let languages = ['JavaScript', 'PHP', 'Ruby', 'Python', 'Go'];
 let languagesText = `私の好きな言語は${languages[0]}です。次は${languages[3]}を勉強してみたいです。`;
 
 console.log(languagesText);
@@ -106,7 +106,7 @@ calc.divide(15,3);
 
 //Q9返り値
 
-function remainder(x, y){
+function remainder(x, y) {
   let mod = x % y;
   return mod;
 }
@@ -128,7 +128,50 @@ console.log(x);
 JavaScriptではスコープの有効範囲は関数内だけとなっており、関数の中で定義した変数は関数の中でしか参照することができない
 変数xは関数fooの中で定義をしているので関数fooの外で関数の外で参照をしようとしても
 x is not defined（変数 x が定義されていない)というエラーが出力をされてしまう。
+
+グローバル汚染
+グローバルスコープに変数をむやみに増やしてしまい
+letやconstをつけずに変数を記述すると
+グローバル変数として定義されてしまい意図しない書き換えやバグが起きてしまう。
+
+
+name = '健太'
+
+function user() {
+  console.log('こんにちは'　+ name + 'さん');
+}
+
+name = 'admin'　意図せずnameを上書きしてしまう。
+
+function admin(){
+  console.log('管理者は'　+ name + 'です')
+}
+
+user();
+admin();
+
+本来は
+「こんにちは健太さん
+　管理者はadminです」
+と表示したかったはずが、
+グローバル汚染をされると
+「こんにちはadminさん
+　管理者はadminです」
+と表示されてしまう。
+
+
+例
+function foo() {
+  x = 1;  宣言なしだとグローバル変数として定義される　
+}
+foo();　ここでxが作られる
+console.log(x);　関数外からも１が参照できる。
+
+こうすることで問題は意図せず書き換えが起きてしまったりバグが発生してしまう。
+
 */
+
+
 
 
 //section６
@@ -140,16 +183,16 @@ console.log('random =>' ,random);
 //Q2コールバック関数
 setTimeout (function() {
   console.log('Hello World!');
-},3000 );
+}, 3000);
 
 //Q3if
 let num = 0;
-if (num > 0) {
-  console.log('num is greater than 0')
+if(num > 0) {
+  console.log('num is greater than 0');
 } else if (num < 0) {
-  console.log('num is less than 0')
+  console.log('num is less than 0');
 } else if (num === 0) {
-  console.log('num is 0')
+  console.log('num is 0');
 }
 
 //Q4for
